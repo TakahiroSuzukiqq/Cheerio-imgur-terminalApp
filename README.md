@@ -1,4 +1,7 @@
-1. Preparetaion & Installation  
+1. Description  
+This terminal app uses npm request & cheerio module to get image(+ etc).  
+
+2. Preparetaion & Installation  
 ````  
 $ mkdir imgur  
 $ touch app.js  
@@ -7,10 +10,10 @@ $ npm init
 $ npm install --save request cheerio  
 ````  
   
-2. Point
+3. Point  
 If you want to get the image from imgur, simply write below within the export method.  
 ````  
-      scraper.js file    
+【scraper.js】  
 const request = require('request');  
 const cheerio = require('cheerio');  
   
@@ -38,6 +41,7 @@ And to get the specific attribute within the element, specify it. In this case i
 
 Then create the object send back function, and use callback function inside the exports method.
 ````  
+【scraper.js】  
 ~~~~
  let image = {  
          url: $url,  
@@ -51,7 +55,7 @@ And then inside the app.js file, define scraper.js file and url which we get the
 As an callback example write following and check in the terminal with the command "node app.js"  
 
 ````  
-     app.js  
+【app.js】   
 const scraper = require('./scraper');  
 const url = 'http://imgur.com/gallery/hj4NW';  
   
