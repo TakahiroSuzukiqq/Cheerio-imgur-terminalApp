@@ -27,3 +27,28 @@ exports.imgScrape = (url, cb) => {
     cb(image);
  });
 }
+
+//Promise Example
+exports.imgScrape2 = (url) => {
+    return new Promise((resolve, reject) => {
+      request(url, (error, resp, body) => {
+     if(error) {
+       reject(error);
+     }
+     let $ = cheerio.load(body);                 
+     let $url = url;                               
+     let $img = $('.post-image img').attr('src')   
+     let $title = $('.post-title').text();
+     let $desc = $('[itemprop=description]').text();
+
+     let image = {
+         url: $url,
+         img: "http" + $img,
+         title: $title,
+         description: $desc
+     }
+    console.log('scraped from scraper.js', image);
+    resolve(image);
+ }); 
+    })
+}
