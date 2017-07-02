@@ -1,5 +1,5 @@
 1. Description  
-This terminal app uses npm request & cheerio module to get image(+ etc).  
+This app is a terminal app using npm request & cheerio module to get image(+ etc).  
 In this app, I scraped the data with using "Callback" and "Promise".  
 2. Preparetaion & Installation  
 ````  
